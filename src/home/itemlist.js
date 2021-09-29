@@ -2,7 +2,7 @@ import React from "react";
 import "./home.css";
 import img1 from "../assets/jpg/c1.jpg";
 import { Button, IconButton } from "@material-ui/core";
-import { CloseRounded } from "@material-ui/icons";
+import { CloseRounded, Satellite } from "@material-ui/icons";
 import {stock} from "../data/data"
 import {useSelector,useDispatch} from 'react-redux'
 import {increment,decrement,addItem,deleteItem,openTab,closeTab} from '../functions/functions'
@@ -26,7 +26,7 @@ function Items() {
     <div className="items">
       
       {stock.map((e,i) => {
-         return (<Item key={i} id={e.id} name= {e.name} price= {e.price} url={e.url}/>)
+         return (<Item key={i} data={e}/>)
       }
       )}
     </div>
@@ -36,29 +36,28 @@ function Items() {
 
 function Item(props){
     const state = useSelector(state => state);
-    console.log(state)
     const dispatch = useDispatch();
     let isExists = false
-    if(state.cart.items.indexOf(props.id) > -1)
+    if(state.cart.items.indexOf(props.data.id) > -1)
           isExists = true
     return(
         <div
         className="item-cont"
         onClick={(e) => {
           if(e.target.className === "MuiButton-label" && !isExists){
-            dispatch(addItem(props.id))
+            dispatch(addItem(props.data.id))
             dispatch(increment())
           
           }else{
-            
+            dispatch(openTab(props.data))
           }
         }}
       >
-        <img src={props.url} />
+        <img src={props.data.url} />
         <div className="item-desc">
           <div className="itm-det">
-            <p className="itm-nm">{props.name}</p>
-            <p className="itm-pr">{"₹"+props.price}</p>
+            <p className="itm-nm">{props.data.name}</p>
+            <p className="itm-pr">{"₹"+props.data.price}</p>
           </div>
           <div className="add">
             <Button color={!isExists ? "primary":"secondary"} variant="contained" disableElevation>
@@ -70,21 +69,28 @@ function Item(props){
     );
 }
 function ItemPopUp() {
-  return false ? (
+  const state = useSelector(state => state);
+  const dispatch = useDispatch();
+  
+  return state.detailsTab ? (
     <div>
       <div className="overlay">
         <div className="desc">
             <div className="close">
-                <IconButton>
+                <IconButton onClick={
+                  ()=>{
+                    dispatch(closeTab())
+                  }
+                }>
                     <CloseRounded/>
                 </IconButton>
             </div>
           <div>
-            <img src={img1} />
+            <img src={state.currentItem.url}  className="det_img"/>
             <div className="itm-det-cart">
               <div className="itm-det">
-                <p className="itm-nm">Name</p>
-                <p className="itm-pr">Price</p>
+                <p className="itm-nm">{state.currentItem.name}</p>
+                <p className="itm-pr">{"₹"+state.currentItem.price}</p>
               </div>
               <div className="add">
                 <div className="minus">
@@ -96,7 +102,12 @@ function ItemPopUp() {
                     -
                   </Button>
                 </div>
-                <p className="count">0</p>
+                <p className="count">{
+                  
+                    state.currentCnt
+                     
+                  
+                }</p>
                 <div className="minus">
                   <Button
                     color="secondary"

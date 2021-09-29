@@ -1,9 +1,11 @@
 const initialState = {
     currentItem:{},
+    currentCnt:0,
     detailsTab:false,
   cart: {
     count: 0,
     items:[],
+    
   },
 };
 
@@ -27,12 +29,14 @@ const dataReducer = (state = initialState, action) => {
             if(index)state.cart.items.splice(index,1)
             return updateState(state);
     case "OPN_DET":
+            state.cart.items.
             state.currentItem = action.value;
             state.detailsTab = true;  
             return updateState(state);
     case "CLS_DET":
                 state.detailsTab = false;
                 return updateState(state);
+
     default:
       return state;
   }

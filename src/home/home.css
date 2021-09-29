@@ -285,6 +285,12 @@ hr{
     justify-content: space-around;
 }
 
+.det_img{
+    width: 10rem;
+    height: 10rem;
+    margin-left: 10rem;
+}
+
 @media only screen and (max-width: 840px) {
    
     .items{
