@@ -1,95 +1,182 @@
-
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,code,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font: inherit;
-    vertical-align: baseline;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+code,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
 }
 
 *:focus {
-    outline: none;
+  outline: none;
 }
-ul{
-    list-style-type: none;
-    
-}
-
-pre{
-    overflow: hidden;
+ul {
+  list-style-type: none;
 }
 
-
-
-
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-    display: block;
+pre {
+  overflow: hidden;
 }
-img, embed, object, video { max-width: 100%; }
-.ie6 img.full, .ie6 object.full, .ie6 embed, .ie6 video { width: 100%; }
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+img,
+embed,
+object,
+video {
+  max-width: 100%;
+}
+.ie6 img.full,
+.ie6 object.full,
+.ie6 embed,
+.ie6 video {
+  width: 100%;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
-
-
 ::-webkit-scrollbar {
-    width: 0.4rem;
-    height: 0.4rem;
+  width: 0.4rem;
+  height: 0.4rem;
+}
 
-  }
-  
-  ::-webkit-scrollbar-track {
-    background:rgba(161, 159, 159, 0.185);
-    border-radius: 10rem;
+::-webkit-scrollbar-track {
+  background: rgba(161, 159, 159, 0.185);
+  border-radius: 10rem;
+}
 
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background: rgba(166, 224, 119, 0.473);
-    border-radius: 10rem;
-  }
-  
+::-webkit-scrollbar-thumb {
+  background: rgba(166, 224, 119, 0.473);
+  border-radius: 10rem;
+}
 
-  ::-webkit-scrollbar-thumb:hover {
-    background: rgba(93, 177, 24, 0.473);
-  }
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(93, 177, 24, 0.473);
+}
 
-  body{
-    font-family: 'Poppins', sans-serif;
-  }
-
-
-
+body {
+  font-family: "Poppins", sans-serif;
+}

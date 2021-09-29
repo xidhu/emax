@@ -1,11 +1,10 @@
 const initialState = {
-    currentItem:{},
-    currentCnt:0,
-    detailsTab:false,
+  currentItem: {},
+  currentCnt: 0,
+  detailsTab: false,
   cart: {
     count: 0,
-    items:[],
-    
+    items: [],
   },
 };
 
@@ -22,19 +21,19 @@ const dataReducer = (state = initialState, action) => {
       state.cart.count = state.cart.count - 1;
       return updateState(state);
     case "ADD_ITM":
-        state.cart.items.push(action.value)
-        return updateState(state);
+      state.cart.items.push(action.value);
+      return updateState(state);
     case "DLT_ITM":
-            let index = state.cart.items.indexOf(action.value)
-            if(index)state.cart.items.splice(index,1)
-            return updateState(state);
+      let index = state.cart.items.indexOf(action.value);
+      if (index) state.cart.items.splice(index, 1);
+      return updateState(state);
     case "OPN_DET":
-            state.currentItem = action.value;
-            state.detailsTab = true;  
-            return updateState(state);
+      state.currentItem = action.value;
+      state.detailsTab = true;
+      return updateState(state);
     case "CLS_DET":
-                state.detailsTab = false;
-                return updateState(state);
+      state.detailsTab = false;
+      return updateState(state);
 
     default:
       return state;
