@@ -20,19 +20,6 @@ time, mark, audio, video {
     vertical-align: baseline;
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color:var(--primary-color);
-    opacity: 0.7; /* Firefox */
-  }
-  
-  :-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color:var(--primary-color);
-  }
-  
-  ::-ms-input-placeholder { /* Microsoft Edge */
-    color:var(--primary-color);
-  }
-
 *:focus {
     outline: none;
 }
@@ -76,42 +63,28 @@ table {
 	border-spacing: 0;
 }
 
-:root{
-    --primary-color:#cccc88;
-    --dark-grey:#262624;
-    --light-grey:#323232;
-    --white:#FFFFFF;
-    --black:#000000;
-    --margin-left:0rem;
-    --margin-top:0rem;
-    --margin-top-mob:8rem;
-    --semi-bold:400;
-    --bold:600;
-   
-    
 
-}
 
 ::-webkit-scrollbar {
-    width: 0.3rem;
-    height: 0.3rem;
+    width: 0.4rem;
+    height: 0.4rem;
 
   }
   
   ::-webkit-scrollbar-track {
-    background:var(--dark-grey);
-    
+    background:rgba(161, 159, 159, 0.185);
+    border-radius: 10rem;
 
   }
   
   ::-webkit-scrollbar-thumb {
-    background: var(--light-grey);
-    border-radius: 1rem;
+    background: rgba(166, 224, 119, 0.473);
+    border-radius: 10rem;
   }
   
 
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--primary-color);
+    background: rgba(93, 177, 24, 0.473);
   }
 
   body{
