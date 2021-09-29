@@ -34,4 +34,16 @@ const closeTab = () => {
   };
 };
 
-export { increment, decrement, addItem, deleteItem, openTab, closeTab };
+const openCart = () => {
+  return {
+    type: "OPN_CRT",
+  };
+};
+
+const closeCart = () => {
+  return {
+    type: "CLS_CRT",
+  };
+};
+
+export { openCart,closeCart,increment, decrement, addItem, deleteItem, openTab, closeTab };

@@ -2,6 +2,7 @@ const initialState = {
   currentItem: {},
   currentCnt: 0,
   detailsTab: false,
+  cartTab:false,
   cart: {
     count: 0,
     items: [],
@@ -33,6 +34,12 @@ const dataReducer = (state = initialState, action) => {
       return updateState(state);
     case "CLS_DET":
       state.detailsTab = false;
+      return updateState(state);
+    case "OPN_CRT":
+      state.cartTab = true;
+      return updateState(state);
+    case "CLS_CRT":
+      state.cartTab = false;
       return updateState(state);
 
     default:

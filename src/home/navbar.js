@@ -6,7 +6,7 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 import SearchIcon from "@material-ui/icons/Search";
 import { ShoppingCart } from "@material-ui/icons";
 import { useSelector, useDispatch } from "react-redux";
-import { increment } from "../functions/functions";
+import { openCart } from "../functions/functions";
 
 function Navbar() {
   const count = useSelector((state) => state.cart.count);
@@ -20,7 +20,7 @@ function Navbar() {
       <SearchBar />
       <div className="menu">
         <div>
-          <IconButton onClick={() => dispatch(increment())}>
+          <IconButton onClick={() => dispatch(openCart())}>
             <ShoppingCart fontSize="medium" />
             <div className="cnt">{count}</div>
           </IconButton>

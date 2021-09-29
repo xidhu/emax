@@ -12,6 +12,7 @@ import {
   deleteItem,
   openTab,
   closeTab,
+  closeCart
 } from "../functions/functions";
 
 function ItemList() {
@@ -141,12 +142,14 @@ function ItemPopUp() {
 }
 
 function CartPopUp(props) {
-  return false ? (
+  const state = useSelector((state) => state);
+  const dispatch = useDispatch();
+  return state.cartTab ? (
     <div>
       <div className="overlay">
         <div className="desc">
           <div className="close">
-            <IconButton>
+            <IconButton onClick={()=>dispatch(closeCart())}>
               <CloseRounded />
             </IconButton>
           </div>
