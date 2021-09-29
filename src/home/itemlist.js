@@ -3,13 +3,14 @@ import "./home.css";
 import img1 from "../assets/jpg/c1.jpg";
 import { Button, IconButton } from "@material-ui/core";
 import { CloseRounded } from "@material-ui/icons";
-
-
-
+import {stock} from "../data/data"
+import {useSelector,useDispatch} from 'react-redux'
+import {increment,decrement,addItem,deleteItem} from '../functions/functions'
 
 function ItemList() {
   return (
     <div>
+      
       <ItemPopUp />
       <CartPopUp />
       <h1>Top Picks</h1>
@@ -20,37 +21,45 @@ function ItemList() {
 }
 
 function Items() {
+  const cart = useSelector(state => state.cart.items);
   return (
     <div className="items">
       
-      <Item/>
-      <Item/>
-      <Item/>
-      <Item/>
-      <Item/>
-      <Item/>
+      {stock.map((e) => {
+         let isExists = false;
+         
+         if(cart.indexOf(e.id) > -1)
+          isExists = true;
+         return (<Item key={e.id} name= {e.name} price= {e.price} url={e.url} isExists={isExists}/>)
+      }
+      )}
     </div>
   );
 }
 
 
-function Item(){
+function Item(props){
+    const state = useSelector(state => state);
+    const dispatch = useDispatch();
     return(
         <div
         className="item-cont"
         onClick={(e) => {
-          alert(e);
+          if(e.target.className === "MuiButton-label"){
+            dispatch(addItem(props.key))
+            dispatch(increment())
+          }
         }}
       >
-        <img src={img1} />
+        <img src={props.url} />
         <div className="item-desc">
           <div className="itm-det">
-            <p className="itm-nm">Name</p>
-            <p className="itm-pr">Price</p>
+            <p className="itm-nm">{props.name}</p>
+            <p className="itm-pr">{"₹"+props.price}</p>
           </div>
           <div className="add">
-            <Button color="primary" variant="contained" disableElevation>
-              Add To Cart
+            <Button color={!props.isExists ? "primary":"secondary"} variant="contained" disableElevation>
+              {!props.isExists ? "Add to Cart":"Added"}
             </Button>
           </div>
         </div>
