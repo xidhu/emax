@@ -1,0 +1,122 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,code,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color:var(--primary-color);
+    opacity: 0.7; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color:var(--primary-color);
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color:var(--primary-color);
+  }
+
+*:focus {
+    outline: none;
+}
+ul{
+    list-style-type: none;
+    
+}
+
+pre{
+    overflow: hidden;
+}
+
+
+
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+img, embed, object, video { max-width: 100%; }
+.ie6 img.full, .ie6 object.full, .ie6 embed, .ie6 video { width: 100%; }
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+:root{
+    --primary-color:#cccc88;
+    --dark-grey:#262624;
+    --light-grey:#323232;
+    --white:#FFFFFF;
+    --black:#000000;
+    --margin-left:0rem;
+    --margin-top:0rem;
+    --margin-top-mob:8rem;
+    --semi-bold:400;
+    --bold:600;
+   
+    
+
+}
+
+::-webkit-scrollbar {
+    width: 0.3rem;
+    height: 0.3rem;
+
+  }
+  
+  ::-webkit-scrollbar-track {
+    background:var(--dark-grey);
+    
+
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--light-grey);
+    border-radius: 1rem;
+  }
+  
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+  }
+
+  body{
+    font-family: 'Poppins', sans-serif;
+  }
+
+
+

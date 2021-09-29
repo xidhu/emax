@@ -1,7 +1,7 @@
 import React from 'react'
 import './home.css'
 import logo from '../assets/png/logo.png'
-import { Icon, IconButton,Menu,MenuItem} from '@material-ui/core'
+import {IconButton} from '@material-ui/core'
 import MoreVertIcon from '@material-ui/icons/MoreVert'
 import SearchIcon from '@material-ui/icons/Search'
 
@@ -16,7 +16,7 @@ function Navbar() {
             <div className="menu">
             <div>
             <IconButton>
-                <MoreVertIcon fontSize="large"/>
+                <MoreVertIcon fontSize="medium"/>
             </IconButton>
             </div>
             </div>
@@ -28,7 +28,7 @@ function Navbar() {
 function SearchBar() {
     return (
         <div className="searchbar">
-            <input></input>
+            <input placeholder={"Search Here"}></input>
             <div className="search-icon">
             <div>
             <IconButton>
