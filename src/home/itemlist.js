@@ -44,7 +44,7 @@ function Item(props){
         <div
         className="item-cont"
         onClick={(e) => {
-          if(e.target.className === "MuiButton-label" && !isExists){
+          if(e.target.className === "MuiButton-label" && !isExists && props.data.available){
             dispatch(addItem(props.data.id))
             dispatch(increment())
           
@@ -60,8 +60,8 @@ function Item(props){
             <p className="itm-pr">{"₹"+props.data.price}</p>
           </div>
           <div className="add">
-            <Button color={!isExists ? "primary":"secondary"} variant="contained" disableElevation>
-              {!isExists ? "Add to Cart":"Added"}
+            <Button color={!props.data.available?"":!isExists ? "primary":"secondary"} variant="contained" disableElevation>
+              {!props.data.available?"Out Of Stock":!isExists ? "Add to Cart":"Added"}
             </Button>
           </div>
         </div>
@@ -120,9 +120,9 @@ function ItemPopUp() {
               </div>
             </div>
           </div>
-          <p className="itm-nm">Vendor</p>
-          <p className="itm-nm">Category</p>
-          <p className="itm-nm">Description</p>
+          <p className="itm-nm">{state.currentItem.vendor}</p>
+          <p className="itm-nm">{state.currentItem.category}</p>
+          <p className="itm-nm">{state.currentItem.desc}</p>
         </div>
       </div>
     </div>

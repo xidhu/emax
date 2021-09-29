@@ -6,7 +6,8 @@ const stock = [ 
             url:"https://images-eu.ssl-images-amazon.com/images/I/41HV1slyYIS._SX300_SY300_QL70_FMwebp_.jpg",
             available:true,
             vendor:"SreeShankara Traders,Mumbai",
-            category:'smartphone'
+            category:'smartphone',
+            desc:"Premium Phone"
 
         },
         {   
@@ -16,7 +17,8 @@ const stock = [ 
             url:"https://m.media-amazon.com/images/I/41G7gISXl+L._SY300_SX300_.jpg",
             available:true,
             vendor:"xMax Traders,bangaluru",
-            category:'laptop'
+            category:'laptop',
+            desc:"Good at its price"
 
         },
         {   
@@ -24,9 +26,10 @@ const stock = [ 
             name:'Mi Tv 4A',
             price:12000,
             url:"https://images-eu.ssl-images-amazon.com/images/I/51mHhm76t5L._SY300_SX300_QL70_FMwebp_.jpg",
-            available:true,
+            available:false,
             vendor:"eCart Traders,Kochi",
-            category:'laptop'
+            category:'laptop',
+            desc:"Premium Phone"
 
         },
         {   
@@ -36,7 +39,8 @@ const stock = [ 
             url:"https://m.media-amazon.com/images/I/41FVUf+ZFpL._SY300_SX300_.jpg",
             available:true,
             vendor:"eCart Traders,Kochi",
-            category:'laptop'
+            category:'laptop',
+            desc:"Good Laptop under 100000"
 
         }
         
