@@ -160,7 +160,8 @@ hr{
 }
 
 .item-cont > img{
-    
+    max-width: 20rem;
+    height: 10rem;
 }
 
 .item-desc{

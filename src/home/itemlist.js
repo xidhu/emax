@@ -5,7 +5,7 @@ import { Button, IconButton } from "@material-ui/core";
 import { CloseRounded } from "@material-ui/icons";
 import {stock} from "../data/data"
 import {useSelector,useDispatch} from 'react-redux'
-import {increment,decrement,addItem,deleteItem} from '../functions/functions'
+import {increment,decrement,addItem,deleteItem,openTab,closeTab} from '../functions/functions'
 
 function ItemList() {
   return (
@@ -21,16 +21,12 @@ function ItemList() {
 }
 
 function Items() {
-  const cart = useSelector(state => state.cart.items);
+  
   return (
     <div className="items">
       
-      {stock.map((e) => {
-         let isExists = false;
-         
-         if(cart.indexOf(e.id) > -1)
-          isExists = true;
-         return (<Item key={e.id} name= {e.name} price= {e.price} url={e.url} isExists={isExists}/>)
+      {stock.map((e,i) => {
+         return (<Item key={i} id={e.id} name= {e.name} price= {e.price} url={e.url}/>)
       }
       )}
     </div>
@@ -40,14 +36,21 @@ function Items() {
 
 function Item(props){
     const state = useSelector(state => state);
+    console.log(state)
     const dispatch = useDispatch();
+    let isExists = false
+    if(state.cart.items.indexOf(props.id) > -1)
+          isExists = true
     return(
         <div
         className="item-cont"
         onClick={(e) => {
-          if(e.target.className === "MuiButton-label"){
-            dispatch(addItem(props.key))
+          if(e.target.className === "MuiButton-label" && !isExists){
+            dispatch(addItem(props.id))
             dispatch(increment())
+          
+          }else{
+            
           }
         }}
       >
@@ -58,8 +61,8 @@ function Item(props){
             <p className="itm-pr">{"₹"+props.price}</p>
           </div>
           <div className="add">
-            <Button color={!props.isExists ? "primary":"secondary"} variant="contained" disableElevation>
-              {!props.isExists ? "Add to Cart":"Added"}
+            <Button color={!isExists ? "primary":"secondary"} variant="contained" disableElevation>
+              {!isExists ? "Add to Cart":"Added"}
             </Button>
           </div>
         </div>
@@ -117,8 +120,8 @@ function ItemPopUp() {
   );
 }
 
-function CartPopUp() {
-    return false ? (
+function CartPopUp(props) {
+    return false? (
       <div>
         <div className="overlay">
           <div className="desc">
